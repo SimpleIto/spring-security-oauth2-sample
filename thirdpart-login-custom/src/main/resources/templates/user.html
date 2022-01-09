@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Spring Security - OAuth 2.0 Login</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1>Already Login</h1>
+<div>
+    <p><span>Token：</span><span th:text="${token}"></span></p>
+    <ul> Atts：
+        <li th:each="item:${atts}">
+            <span th:text="${item.key}"></span> <span th:text="${item.value}"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

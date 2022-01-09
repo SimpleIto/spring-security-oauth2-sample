@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: DEBUG
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          gitee:
+            client-id: your-client-id
+            client-secret: your-client-secret
+#            ClientAuthenticationMethod 预定义值
+            client-authentication-method: client_secret_basic
+#            AuthorizationGrantType 预定义值
+            authorization-grant-type: authorization_code
+            redirect-uri: http://127.0.0.1:8080/login/oauth2/code/gitee
+            scope: user_info
+#            自动构造登录页时，显示的名字
+            client-name: Gitee
+          github:
+            client-id: your-client-id
+            client-secret: your-client-secret
+        provider:
+          gitee:
+            authorization-uri: https://gitee.com/oauth/authorize
+            token-uri: https://gitee.com/oauth/token
+            user-info-uri: https://gitee.com/api/v5/user
+            userNameAttribute: name
+
