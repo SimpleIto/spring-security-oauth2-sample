@@ -16,6 +16,7 @@ import java.sql.Statement;
 @Service
 public class UserService {
     private final JdbcTemplate jdbcTemplate;
+
     @Autowired
     public UserService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -26,7 +27,7 @@ public class UserService {
         try {
             return jdbcTemplate.queryForObject("SELECT * FROM user WHERE " + keyName + " = ?",
                     new BeanPropertyRowMapper<>(User.class), id);
-        } catch (EmptyResultDataAccessException e){
+        } catch (EmptyResultDataAccessException e) {
             return null;
         }
     }

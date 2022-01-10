@@ -13,7 +13,9 @@ spring:
   thymeleaf:
     cache: false
   flyway:
-    enabled: false
+    baseline-on-migrate: true
+    out-of-order: true
+    validate-on-migrate: false
   security:
     oauth2:
       client:
@@ -21,7 +23,9 @@ spring:
           gitee:
             client-id: your-client-id
             client-secret: your-client-secret
+            #             ClientAuthenticationMethod
             client-authentication-method: client_secret_basic
+            #             AuthorizationGrantType
             authorization-grant-type: authorization_code
             redirect-uri: http://127.0.0.1:8080/login/oauth2/code/gitee
             scope: user_info

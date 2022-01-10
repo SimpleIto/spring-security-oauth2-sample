@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 @Component
 public class JacksonJsr310Customizer implements Jackson2ObjectMapperBuilderCustomizer {
     public static final DateTimeFormatter LOCAL_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
     @Override
     public void customize(Jackson2ObjectMapperBuilder builder) {
         LocalDateTimeDeserializer localDateTimeDeserializer = new LocalDateTimeDeserializer(LOCAL_DATE_TIME_FORMATTER);

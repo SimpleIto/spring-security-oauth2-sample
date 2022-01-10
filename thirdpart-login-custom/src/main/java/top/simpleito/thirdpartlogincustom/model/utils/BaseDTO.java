@@ -5,7 +5,9 @@ public class BaseDTO<E> {
     private Integer code;
     private String msg;
 
-    public BaseDTO(){}
+    public BaseDTO() {
+    }
+
     public BaseDTO(E data, Integer code, String msg) {
         this.data = data;
         this.code = code;
